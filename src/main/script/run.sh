@@ -1,13 +1,14 @@
 #!/bin/sh
 BASEDIR="$(dirname "$0")"
+
+cd "$BASEDIR"
+
 LIBRARY="$BASEDIR/lib"
-USERDIR="$BASEDIR"
 JAR="$BASEDIR/lib/Vokabeltrainer.jar"
 
 echo "BASEDIR:" $BASEDIR
 echo "LIBRARY:" $LIBRARY
-echo "USERDIR:" $USERDIR
 echo "JAR:" $JAR
 
 
-java -Djava.library.path="$LIBRARY" -Duser.dir="$USERDIR" -jar "$JAR"
+java -Djava.library.path="$LIBRARY" -jar "$JAR"
